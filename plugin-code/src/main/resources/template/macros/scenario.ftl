@@ -71,6 +71,7 @@ limitations under the License.
                                 </#if>
                                 <th class="text-left">Feature</th>
                                 <th class="text-left">Scenario</th>
+                                <th>Tags</th>
                                 <th>Started</th>
                                 <th>Duration</th>
                                 <#if allRequested>
@@ -100,6 +101,11 @@ limitations under the License.
                                             <td class="text-left">
                                                 <a href="pages/scenario-detail/scenario_${element.scenarioIndex?c}.html"
                                                    style="word-break: break-all">${element.name?html}</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <#list element.tags as tag>
+                                                    <a href="pages/tag-scenarios/tag_${tag?c}.html">@${tag?html}</a>
+                                                </#list>
                                             </td>
                                             <td class="text-center small" data-order="${element.startTimestamp}">
                                                 ${element.startDateString}<br>${element.startTimeString}
